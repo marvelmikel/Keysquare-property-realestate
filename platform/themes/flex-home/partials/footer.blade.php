@@ -11,7 +11,7 @@
     </a>
     </h2>
     @endif
-    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+
     <!-- <ul class="ftco-footer-social list-unstyled mt-2">
     <li><a href="#"><span class="fa fa-twitter"></span></a></li>
     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
