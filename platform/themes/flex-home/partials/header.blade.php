@@ -40,7 +40,7 @@
 
 {!! apply_filters(THEME_FRONT_BODY, null) !!}
 <div id="alert-container"></div>
-<div class="py-4 top-wrap">
+ {{-- <div class="py-4 top-wrap">
 <div class="container-xl">
 <div class="row d-flex align-items-start">
 <div class="col-md topper d-flex mb-md-0 align-items-xl-center">
@@ -70,7 +70,9 @@
 <div class="text pl-3 pl-md-3">
     <p class="con"><span>Connect </span> <span>with us</span></p>
     <p class="con"><a href="#">Facebook</a> <a href="#">Twitter</a> <a href="https://youtube.com/channel/UCduGXeujXPR4o2lK-ix0gpQ">Youtube</a></p>
+
     </div>
+
 
     <!--Auth-->
     @if (is_plugin_active('real-estate') && RealEstateHelper::isRegisterEnabled())
@@ -79,7 +81,7 @@
         <li class="login-item"><a href="{{ route('public.account.dashboard') }}" rel="nofollow"><i class="fas fa-user"></i> <span>{{ auth('account')->user()->name }}</span></a></li>
         <li class="login-item"><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" rel="nofollow"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a></li>
          @else
-        <li class="login-item">
+        <li class="login-item" style="color: white">
         <a href="{{ route('public.account.login') }}"><i class="fas fa-sign-in-alt"></i>  {{ __('Login') }}</a>
         </li>
         @endif
@@ -93,11 +95,11 @@
 </div>
 </div>
 </div>
-</div>
+</div> --}}
 
 
 
-<!--<div class="bravo_topbar d-none d-sm-block">
+<div class="bravo_topbar d-none d-sm-block">
     <div class="container-fluid w90">
         <div class="row">
             <div class="col-12">
@@ -137,7 +139,7 @@
                                             <ul class="dropdown-menu language_bar_chooser">
                                                 @foreach ($currencies as $currency)
                                                     <li>
-                                                        <a href="{{ route('public.change-currency', $currency->title) }}" @if (get_application_currency_id() == $currency->id) class="active" @endif><span>{{ $currency->title }}</span></a>
+                                                        <a href="{{ route('public.change-currency', $currency->title) }}" @if (get_application_currency_id() == $currency->id) class="active" @endif ><span style="color:white">{{ $currency->title }}</span></a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -169,7 +171,7 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
 
 
 
@@ -182,7 +184,7 @@
                         @if (theme_option('logo'))
                             <a class="navbar-brand" href="{{ route('public.index') }}">
                                 <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}"
-                                     class="logo" height="40" alt="{{ theme_option('site_name') }}">
+                                     class="logo" sizes="40%" alt="{{ theme_option('site_name') }}">
                             </a>
                         @endif
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -203,6 +205,7 @@
                                 <div class="main-menu-nav d-lg-flex">
 
 
+
                                     {!!
                                         Menu::renderMenuLocation('main-menu', [
                                             'options' => ['class' => 'navbar-nav justify-content-end menu menu--mobile'],
@@ -215,7 +218,7 @@
                                         </a>
                                     @endif
 
-                                    <!--<div class="d-sm-none">
+                                    <div class="d-sm-none">
                                         <div>
                                             @if (is_plugin_active('real-estate'))
                                                 @if (RealEstateHelper::isEnabledWishlist())
@@ -227,28 +230,28 @@
                                                 @endif
 
                                                 @if (count($currencies) > 1)
-                                                    <div class="language">
+                                                    {{-- <div class="language">
                                                         <div class="language-switcher-wrapper">
-                                                            <div class="d-inline-block language-label">
+                                                            <div class="d-inline-block language-label" style="color:white">
                                                                 {{ __('Currencies') }}:
                                                             </div>
                                                             <div class="dropdown d-inline-block">
-                                                                <button class="btn btn-secondary dropdown-toggle btn-select-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                <button style="color:white" class="btn btn-secondary dropdown-toggle btn-select-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                                     {{ get_application_currency()->title }}
                                                                 </button>
-                                                                <ul class="dropdown-menu language_bar_chooser">
+                                                                <ul class="dropdown-menu language_bar_chooser" style="color:white">
                                                                     @foreach ($currencies as $currency)
-                                                                        <li>
+                                                                        <li >
                                                                             <a href="{{ route('public.change-currency', $currency->title) }}" @if (get_application_currency_id() == $currency->id) class="active" @endif><span>{{ $currency->title }}</span></a>
                                                                         </li>
                                                                     @endforeach
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                 @endif
                                             @endif
-                                            {!! Theme::partial('language-switcher') !!}
+                                            {{-- {!! Theme::partial('language-switcher') !!} --}}
                                             @if (is_plugin_active('real-estate') && RealEstateHelper::isRegisterEnabled())
                                                 <ul class="topbar-items d-block">
                                                     @if (auth('account')->check())
@@ -267,7 +270,7 @@
                                                 @endif
                                             @endif
                                         </div>
-                                    </div>-->
+                                    </div>
                                 </div>
                             </div>
 
@@ -445,7 +448,7 @@
             </a>
             </div>
             <div class="col-md-3 text-center d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <a href="#" class="services">
+            <a href="/properties" class="services">
             <div class="icon"><span class="flaticon-house"></span></div>
             <div class="text">
             <h2>Residential</h2>

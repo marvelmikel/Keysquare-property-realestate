@@ -10,3 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/c', [App\Http\Controllers\CarierController::class, 'c']);
+Route::post('store', [App\Http\Controllers\CarierController::class, 'store'])->name('store');
+Route::post('/platform.themes.flex-home.career.careers', [App\Http\Controllers\CarierController::class, 'career'])->name('career');
+
+
