@@ -175,7 +175,7 @@
 
 
 
-<header class="topmenu" style="background:#06112A;">
+<header class="topmenu" style="background:#06112A">
     <div @if (theme_option('enable_sticky_header', 'yes') == 'yes') id="header-waypoint" @endif class="main-header">
         <div class="container-fluid w90">
             <div class="row">
@@ -258,8 +258,8 @@
                                                         <li class="login-item"><a href="{{ route('public.account.dashboard') }}" rel="nofollow"><i class="fas fa-user"></i> <span>{{ auth('account')->user()->name }}</span></a></li>
                                                         <li class="login-item"><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" rel="nofollow"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a></li>
                                                     @else
-                                                        <li class="login-item">
-                                                            <a href="{{ route('public.account.login') }}"><i class="fas fa-sign-in-alt"></i>  {{ __('Login') }}</a>
+                                                        <li class="login-item" >
+                                                            <a style="color:white" href="{{ route('public.account.login') }}"><i style="color:white" class="fas fa-sign-in-alt"></i>  {{ __('Login') }}</a>
                                                         </li>
                                                     @endif
                                                 </ul>
