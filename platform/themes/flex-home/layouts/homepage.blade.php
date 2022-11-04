@@ -108,11 +108,16 @@
 						</div>
 						<div class="txt-field">
 							<select class="txt-input" id="preffered_city" name="preffered_city" required>
-							<option> Choose Proffered City</option>
-							<option value="Abuja">Abuja</option>
-							<option value="Lagos">Lagos</option>
-							<option value="Enugu">Enugu</option>
-							<option value="Kano">Kano</option>
+							<option> choose preferred estate Location</option>
+							<option value="Abuja">Idu</option>
+							<option value="Lagos">Apo</option>
+							<option value="Enugu">Lugbe</option>
+							<option value="Kano">Karasana</option>
+                            <option value="Kano">Maitama</option>
+                            <option value="Kano">Kubwa</option>
+                            <option value="Kano">Guzape</option>
+                            <option value="Kano">Life Camp</option>
+                            <option value="Kano">Jahi</option>
 							</select>
 						</div>
 					</div>

@@ -9,6 +9,7 @@
             @if ($row->has_child)
                 <span class="fas fa-angle-down sub-toggle-desktop"></span>
                 <span class="sub-toggle"></span>
+      
                 {!!
                     Menu::generateMenu([
                         'menu'       => $menu,

@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="{{ URL::asset('u/css/A.animate.css%2bflaticon.css%2btiny-slider.css%2bglightbox.min.css%2baos.css%2bstyle.css%2cMcc.GVIUmIpB3f.css.pagespeed.cf.wuDyiIMmfX.css') }}" />
 <link rel="stylesheet" href="{{ URL::asset('u/css/style.css') }}">
 <!--end new design-->
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-559213c5-9d06-462b-bbf2-caf867edfbbd"></div>
 
     <style>
         :root {
@@ -130,7 +132,7 @@
 
                             @php $currencies = get_all_currencies(); @endphp
                             @if (count($currencies) > 1)
-                                <div class="language currency-switcher">
+                                {{-- <div class="language currency-switcher">
                                     <div class="language-switcher-wrapper">
                                         <div class="dropdown d-inline-block">
                                             <button class="btn btn-secondary dropdown-toggle btn-select-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -145,10 +147,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             @endif
                         @endif
-                        {!! Theme::partial('language-switcher') !!}
+                        {{-- {!! Theme::partial('language-switcher') !!} --}}
                         @if (is_plugin_active('real-estate') && RealEstateHelper::isRegisterEnabled())
                             <ul class="topbar-items">
                                 @if (auth('account')->check())
@@ -177,14 +179,18 @@
 
 <header class="topmenu" style="background:#06112A">
     <div @if (theme_option('enable_sticky_header', 'yes') == 'yes') id="header-waypoint" @endif class="main-header">
-        <div class="container-fluid w90">
+        <div class="container-fluid w100">
             <div class="row">
                 <div class="col-12">
+
                     <nav class="navbar navbar-expand-lg navbar-light">
+                        <h4 style="color:#fff; font-size: 15px; padding-left:150px">RC 1721549 <br> KEYSQUARE<br> HOMES & PROPERTIES LTD<BR> Keys to your Home </h4>
+
                         @if (theme_option('logo'))
                             <a class="navbar-brand" href="{{ route('public.index') }}">
                                 <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}"
-                                     class="logo" sizes="40%" alt="{{ theme_option('site_name') }}">
+                                     class="logo" sizes="30%" alt="{{ theme_option('site_name') }}" >
+
                             </a>
                         @endif
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -202,21 +208,32 @@
                                         <i class="far fa-times-circle"></i>
                                     </span>
                                 </div>
+                                {{-- <h4 style="color:#fff; font-size: 15px">RC 1721549 <br> KEYSQUARE<br> HOMES & PROPERTIES LTD<BR> Keys to your Home </h4> --}}
                                 <div class="main-menu-nav d-lg-flex">
-
-
-
                                     {!!
                                         Menu::renderMenuLocation('main-menu', [
                                             'options' => ['class' => 'navbar-nav justify-content-end menu menu--mobile'],
                                             'view'    => 'main-menu',
                                         ])
                                     !!}
-                                    @if (is_plugin_active('real-estate') && RealEstateHelper::isRegisterEnabled())
+                                    <div class="dropdown" style="padding-top: 15px; padding-left:-5px">
+                                        <button style="width: 130px" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Gallery
+                                        <span class="caret"></span></button>
+                                        <ul style="padding-top: 20px; padding-left:5px; background:green"; color:white class="dropdown-menu">
+                                            <li style="font-color:white"><a href="/gallery">Images</a></li>
+                                            <li style="color:white"><a href="/video">Videos</a></li>
+
+                                        </ul>
+                                        </div>
+
+
+                                   @if (is_plugin_active('real-estate') && RealEstateHelper::isRegisterEnabled())
                                         <a class="btn btn-primary add-property" href="{{ route('public.account.properties.index') }}">
                                             <i class="fas fa-plus-circle"></i> {{ __('Add Property') }}
                                         </a>
                                     @endif
+
+
 
                                     <div class="d-sm-none">
                                         <div>
@@ -580,13 +597,14 @@
         <div class="col-md-6 vid-height d-flex align-items-center justify-content-center text-center">
 
         <div class="video-wrap" data-aos="fade-up">
+
         <h3>Modern House Video</h3>
-        <video width="200" height="200" controls>
+        {{-- <video width="200" height="200" controls>
         <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
         <source src="{{ URL::asset('u/video/keysqaure.mp4')}}" type="video/mp4" class="video-icon glightbox d-flex align-items-center justify-content-center">
         <span class="ion-ios-play"></span>
 
-    </video>
+    </video> --}}
         </div>
         </div>
         </div>

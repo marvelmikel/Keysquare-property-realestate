@@ -16,6 +16,10 @@ class CarierController extends Controller
     {
         return view('c');
     }
+    public function video()
+    {
+        return view('video');
+    }
 
     /**
      * Show the form for creating a new resource.
