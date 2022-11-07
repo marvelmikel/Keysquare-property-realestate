@@ -184,7 +184,7 @@
                 <div class="col-12">
 
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <h4 style="color:#fff; font-size: 15px; padding-left:150px">RC 1721549 <br> KEYSQUARE<br> HOMES & PROPERTIES LTD<BR> Keys to your Home </h4>
+                        <h4 style="color:#fff; font-size: 15px; padding-left:10px">RC 1721549 <br> KEYSQUARE<br> HOMES & PROPERTIES LTD<BR> Keys to your Home </h4>
 
                         @if (theme_option('logo'))
                             <a class="navbar-brand" href="{{ route('public.index') }}">
