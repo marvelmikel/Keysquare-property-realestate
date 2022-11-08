@@ -18,22 +18,22 @@ class MailConfigServiceProvider extends ServiceProvider
             $config = $this->app->make('config');
             $setting = $this->app->make(SettingStore::class);
 
-            $config->set([
-                'mail' => array_merge($config->get('mail'), [
-                    'default' => $setting->get('email_driver', $this->app->environment('demo') ? $config->get('mail.default') : 'sendmail'),
-                    'from'    => [
-                        'address' => $setting->get('email_from_address', $config->get('mail.from.address')),
-                        'name'    => $setting->get('email_from_name', $config->get('mail.from.name')),
-                    ],
-                    'stream' => [
-                        'ssl' => [
-                            'allow_self_signed' => true,
-                            'verify_peer'       => false,
-                            'verify_peer_name'  => false,
-                        ],
-                    ],
-                ]),
-            ]);
+            // $config->set([
+            //     'mail' => array_merge($config->get('mail'), [
+            //         'default' => $setting->get('email_driver', $this->app->environment('demo') ? $config->get('mail.default') : 'sendmail'),
+            //         'from'    => [
+            //             'address' => $setting->get('email_from_address', $config->get('mail.from.address')),
+            //             'name'    => $setting->get('email_from_name', $config->get('mail.from.name')),
+            //         ],
+            //         'stream' => [
+            //             'ssl' => [
+            //                 'allow_self_signed' => true,
+            //                 'verify_peer'       => false,
+            //                 'verify_peer_name'  => false,
+            //             ],
+            //         ],
+            //     ]),
+            // ]);
 
             switch ($setting->get('email_driver', $config->get('mail.default'))) {
                 case 'smtp':

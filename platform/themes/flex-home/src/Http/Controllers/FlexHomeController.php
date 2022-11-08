@@ -20,6 +20,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use RealEstateHelper;
 use SeoHelper;
 use Theme;
+use Mail;
 use Theme\FlexHome\Http\Resources\AgentHTMLResource;
 use Theme\FlexHome\Http\Resources\PostResource;
 use Theme\FlexHome\Http\Resources\PropertyHTMLResource;
@@ -500,5 +501,37 @@ class FlexHomeController extends PublicController
         return $response
             ->setData(AgentHTMLResource::collection($accounts))
             ->toApiResponse();
+    }
+    public function inspection(Request $request){
+        $request->validate([
+            'email'=>'required',
+            'name'=>'required',
+            'phone_number'=>'required',
+            'preffered_time'=>'required',
+            'preffered_date'=>'required',
+            'preffered_city'=>'required',
+
+        ]);
+
+        $email = $request->email;
+        $name = $request->name;
+        $phone_number = $request->phone_number;
+        $preffered_date = $request->preffered_date;
+        $preffered_time = $request->preffered_time;
+        $preffered_city = $request->preffered_city;
+
+
+        Mail::send('email.inspection',['email'=>$email,'name'=>$name,'phone_number'=>$phone_number,'preffered_city'=>$preffered_city,'preffered_time'=>$preffered_time,'preffered_date'=>$preffered_date], function($message) use($request){
+            $message->to('keysquareservices@gmail.com');
+            $message->subject('Inspection Booked');
+            $message->from('keysquareservices@gmail.com');
+        });  
+
+        $notify[] = ['success', 'Your booking has successfully been received, Close model to view some of the available properties'];
+        return redirect("/properties")->withNotify($notify);
+
+
+
+
     }
 }

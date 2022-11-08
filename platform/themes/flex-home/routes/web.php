@@ -23,7 +23,7 @@ Route::group(['namespace' => 'Theme\FlexHome\Http\Controllers', 'middleware' => 
         Route::get('ajax/properties', 'FlexHomeController@ajaxGetProperties')->name('public.ajax.properties');
         Route::get('ajax/posts', 'FlexHomeController@ajaxGetPosts')->name('public.ajax.posts');
         Route::get('ajax/properties/map', 'FlexHomeController@ajaxGetPropertiesForMap')->name('public.ajax.properties.map');
-
+        Route::get('/booked','FlexHomeController@booked');
         Route::get('ajax/agents/featured', 'FlexHomeController@ajaxGetFeaturedAgents')->name('public.ajax.featured-agents');
     });
 });
@@ -33,7 +33,8 @@ Theme::routes();
 Route::group(['namespace' => 'Theme\FlexHome\Http\Controllers', 'middleware' => ['web', 'core']], function () {
     Route::group(apply_filters(BASE_FILTER_GROUP_PUBLIC_ROUTE, []), function () {
         Route::get('/', 'FlexHomeController@getIndex')->name('public.index');
-
+        Route::post('/inspection','FlexHomeController@inspection');
+     
         Route::get('sitemap.xml', [
             'as'   => 'public.sitemap',
             'uses' => 'FlexHomeController@getSiteMap',

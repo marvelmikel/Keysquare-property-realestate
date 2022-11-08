@@ -80,56 +80,7 @@
     </div>
     </section>
 
-    <div class="survay_popup">
-		<div class="box">
-			<div class="form">
-				<form method="post" action="/inspection">
-                    @csrf
-					<div class="close">
-						<span>&times;</span>
-					</div>
-					<div class="form-body">
-						<h3 class="heading" style="font-weight:300;">BOOK AN INSPECTION</h3>
-						<p class="paragraph">Fill the form below and one of our Executives will get in touch with you</p>
-						<div class="txt-field">
-							<div><input class="txt-input" type="text" name="name" placeholder="Full Name" required></div>
-						</div>
-						<div class="txt-field">
-							<input class="txt-input" type="email" name="email" placeholder="Email" required>
-						</div>
-						<div class="txt-field">
-							<input class="txt-input" type="number" name="phone_number" placeholder="Phone number" required>
-						</div>
-						<div class="txt-field">
-							<label>Choose Preffered Date</label>
-							<input class="txt-input" type="date" name="preffered_date" placeholder="Click to choose date" required>
-						</div>
-						<div class="txt-field">
-							<label>Choose Preffered Time</label>
-							<input class="txt-input" type="time" name="preffered_time" placeholder="Click to choose time" required>
-						</div>
-						<div class="txt-field">
-							<select class="txt-input" id="preffered_city" name="preffered_city" required>
-							<option> choose preferred estate Location</option>
-							<option value="Abuja">Idu</option>
-							<option value="Lagos">Apo</option>
-							<option value="Enugu">Lugbe</option>
-							<option value="Kano">Karasana</option>
-                            <option value="Kano">Maitama</option>
-                            <option value="Kano">Kubwa</option>
-                            <option value="Kano">Guzape</option>
-                            <option value="Kano">Life Camp</option>
-                            <option value="Kano">Jahi</option>
-							</select>
-						</div>
-					</div>
-					<div class="button">
-						<button type="submit" class="btn" style="background: #06112A; color:aliceblue">SUBMIT</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+   
 
 
 {!! Theme::partial('footer') !!}

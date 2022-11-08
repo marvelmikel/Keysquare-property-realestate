@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="{{ URL::asset('u/css/style.css') }}">
 <!--end new design-->
     {!! Theme::header() !!}
+    @include('partials.notify')
 </head>
 
 <section class="ftco-section bg-light">
@@ -32,14 +33,10 @@
         <a href="/"><img src="{{URL::asset('u/images/Keysquare-logo.png')}}"></a>
         <hr>
     <h3>career</h3>
-    @if(Session::has('success'))
-    <div class="alert alert-success">
-    {{ Session::get('success') }}
-   </div>
-   @endif
+    
     <p class="mb-4">Please Fill the form below</p>
-
-    <form method="POST"  id="contactForm" name="contactForm" class="contactForm">
+    
+    <form method="POST"  action ='/careers' id="contactForm" name="contactForm" class="contactForm" enctype="multipart/form-data">
         @csrf
     <div class="row">
     <div class="col-md-12">

@@ -12,5 +12,5 @@
 */
 Route::get('/c', [App\Http\Controllers\CarierController::class, 'c']);
 Route::get('/video', [App\Http\Controllers\CarierController::class, 'video']);
-
+Route::post('/careers',[App\Http\Controllers\CarierController::class, 'store']);
 

@@ -1,9 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Carier;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Base\Http\Responses\BaseHttpResponse;
+use Botble\Base\Supports\RepositoryHelper;
+use Botble\Blog\Repositories\Interfaces\PostInterface;
+use Botble\Location\Repositories\Interfaces\CityInterface;
+use Botble\RealEstate\Enums\PropertyTypeEnum;
+use Botble\RealEstate\Models\Account;
+use Botble\RealEstate\Repositories\Interfaces\AccountInterface;
+use Botble\RealEstate\Repositories\Interfaces\ProjectInterface;
+use Botble\RealEstate\Repositories\Interfaces\PropertyInterface;
+use Botble\Theme\Http\Controllers\PublicController;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+use RealEstateHelper;
+use SeoHelper;
+use Theme;
+use Mail;
+use Theme\FlexHome\Http\Resources\AgentHTMLResource;
+use Theme\FlexHome\Http\Resources\PostResource;
+use Theme\FlexHome\Http\Resources\PropertyHTMLResource;
+use Theme\FlexHome\Http\Resources\PropertyResource;
+use App\Models\Carier;
 
 class CarierController extends Controller
 {
@@ -47,9 +67,37 @@ class CarierController extends Controller
             'qualification' => 'required',
             // 'file' => 'required',
         ]);
-        Carier::create($request->all());
 
-        return redirect()->route('career')->with('Success', 'Career created successfully.');
+        $data = array(
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'phone_number'=> $request->phone_number,
+            'job_position'=> $request->job_position,
+            'qualification'=> $request->qualification,
+            
+        );
+        $name = $request->name;
+        $files = $request->file('file');
+
+        Mail::send('email.career', compact('data'), function($message) use($request, $files,$name){
+            $message->to('keysquareservices@gmail.com');
+            $message->subject('Received New CV from '.$name);
+            $message->from('keysquareservices@gmail.com');
+            
+                $message->attach($files->getRealPath(), array(
+                    'as' => $files->getClientOriginalName(), // If you want you can chnage original name to custom name      
+                    'mime' => $files->getMimeType())
+                );
+            
+            
+        });  
+
+        $notify[] = ['success', 'Your submission has successfully been received'];
+        return redirect("/careers")->withNotify($notify);
+       
+        // Carier::create($request->all());
+
+        // return redirect()->route('career')->with('Success', 'Career created successfully.');
     }
 
     /**
