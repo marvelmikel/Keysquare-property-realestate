@@ -289,7 +289,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/api",
-                "reference": "c0162210153e34a6395923b0dcb0cc8a9778c497"
+                "reference": "d1f08c215a9a40f3f6f540467374853bb7c421f2"
             },
             "require": {
                 "knuckleswtf/scribe": "^2.0|^3.0"
@@ -380,7 +380,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/get-started",
-                "reference": "117276e8919c896426c80e47c04283a86bb0e171"
+                "reference": "bd289806f8b81cce67a69a1b062bbb066c3a9480"
             },
             "type": "package",
             "extra": {
@@ -406,7 +406,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/menu",
-                "reference": "4fb766d69e77acbb6d1d7b5678e50f4b02e13cdf"
+                "reference": "5fff8b21785faa48430ffc75e9861ce2ac76ca07"
             },
             "require": {
                 "botble/platform": "*@dev",
@@ -439,7 +439,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/optimize",
-                "reference": "6491117da56958d5f7d858022f71fbe8d390f841"
+                "reference": "9c9f3331e5b24b0c749090854ff61afa84ea1b9d"
             },
             "require": {
                 "botble/platform": "*@dev"
@@ -468,7 +468,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/page",
-                "reference": "fd000c29162ceafe1b5a9254ad108c3bb2cbcc2b"
+                "reference": "8d9c7ae7f59cbe2c285f6d93b5349026a3a53699"
             },
             "require": {
                 "botble/platform": "*@dev",
@@ -498,7 +498,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/core",
-                "reference": "940d391bd7a8fe474057a64cc02e601640063b12"
+                "reference": "322334fbb00b91d3ac463c8c0fb14a5b9dd2da31"
             },
             "require": {
                 "barryvdh/laravel-dompdf": "^2.0",
@@ -586,7 +586,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/plugin-management",
-                "reference": "29751744a6f03d965862838828b299c983e29c2f"
+                "reference": "727593235ee65c9d2709a191d90b0b3d2c5a08d5"
             },
             "require": {
                 "botble/platform": "*@dev"
@@ -615,7 +615,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/revision",
-                "reference": "da70c1cea160555306a0a9a71e11586e03638fd0"
+                "reference": "52dae12c951542b1bc1aabb8ffb3bc7802abf71f"
             },
             "require": {
                 "botble/platform": "*@dev"
@@ -644,7 +644,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/seo-helper",
-                "reference": "4faaadc9ce31b6758c30deef29e4593903a1f2a2"
+                "reference": "c0fcd1f748b82aa42965fa2399580b77642e1f04"
             },
             "require": {
                 "botble/platform": "*@dev",
@@ -677,7 +677,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/shortcode",
-                "reference": "496b22ab769f3b01ccc9abffe328350f9571984b"
+                "reference": "f5ef965b0d5df3d7de53570dc0c28c29d5430adc"
             },
             "require": {
                 "botble/platform": "*@dev"
@@ -706,7 +706,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/sitemap",
-                "reference": "4b7b511d95523705ca390ac337b88f9fee3bce30"
+                "reference": "14fa340b4dda37f8bcc7b9371515c3d0a21cc83e"
             },
             "type": "library",
             "extra": {
@@ -735,7 +735,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/slug",
-                "reference": "a10c9ff93719f5e8967ec4702d102d4b4e00f341"
+                "reference": "a6b384fb207b07efa35c683e8d30c1f95f158891"
             },
             "require": {
                 "botble/platform": "*@dev"
@@ -767,7 +767,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/theme",
-                "reference": "b17de8ae85c7745f3e5619834fac0b3448cfd31d"
+                "reference": "2bf5dbbfaf0c88f3c920dadff8f726bd3632a5df"
             },
             "require": {
                 "botble/platform": "*@dev",
@@ -808,7 +808,7 @@
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/widget",
-                "reference": "b09777a9fabc10e51daace18201d12a08ef8c78a"
+                "reference": "bc2384c97d87c5367085c4c4e42848db384c93e7"
             },
             "require": {
                 "botble/platform": "*@dev",
@@ -3367,16 +3367,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v5.5.5",
+            "version": "v5.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "ce8b2f967eead5a6bae74449e207be6f8046edc3"
+                "reference": "1cd1682b709b8808a5b5dbb68179a58d1342aa7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/ce8b2f967eead5a6bae74449e207be6f8046edc3",
-                "reference": "ce8b2f967eead5a6bae74449e207be6f8046edc3",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/1cd1682b709b8808a5b5dbb68179a58d1342aa7b",
+                "reference": "1cd1682b709b8808a5b5dbb68179a58d1342aa7b",
                 "shasum": ""
             },
             "require": {
@@ -3432,7 +3432,7 @@
                 "issues": "https://github.com/laravel/socialite/issues",
                 "source": "https://github.com/laravel/socialite"
             },
-            "time": "2022-08-20T21:32:07+00:00"
+            "time": "2022-11-08T15:07:05+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -6724,29 +6724,30 @@
         },
         {
             "name": "spatie/laravel-feed",
-            "version": "3.2.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-feed.git",
-                "reference": "f0d15c878220a69db0f1f94cc2113a0e0e3358dd"
+                "reference": "09afe082ab06ef991dfe1af63c6a223001da3c4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/f0d15c878220a69db0f1f94cc2113a0e0e3358dd",
-                "reference": "f0d15c878220a69db0f1f94cc2113a0e0e3358dd",
+                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/09afe082ab06ef991dfe1af63c6a223001da3c4a",
+                "reference": "09afe082ab06ef991dfe1af63c6a223001da3c4a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "^7.0|^8.0",
-                "illuminate/http": "^7.0|^8.0",
-                "illuminate/support": "^7.0|^8.0",
-                "php": "^7.4|^8.0",
-                "spatie/laravel-package-tools": "^1.5"
+                "illuminate/contracts": "^8.0|^9.0",
+                "illuminate/http": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9"
             },
             "require-dev": {
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.3",
-                "spatie/phpunit-snapshot-assertions": "^4.2",
+                "orchestra/testbench": "^6.23|^7.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5",
+                "spatie/pest-plugin-snapshots": "^1.1",
                 "spatie/test-time": "^1.2"
             },
             "type": "library",
@@ -6784,6 +6785,11 @@
                     "email": "sebastian@spatie.be",
                     "homepage": "https://spatie.be",
                     "role": "Developer"
+                },
+                {
+                    "name": "Patrick Organ",
+                    "homepage": "https://github.com/patinthehat",
+                    "role": "Developer"
                 }
             ],
             "description": "Generate rss feeds",
@@ -6795,16 +6801,19 @@
                 "spatie"
             ],
             "support": {
-                "issues": "https://github.com/spatie/laravel-feed/issues",
-                "source": "https://github.com/spatie/laravel-feed/tree/3.2.1"
+                "source": "https://github.com/spatie/laravel-feed/tree/4.2.0"
             },
             "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
                 {
                     "url": "https://github.com/spatie",
                     "type": "github"
                 }
             ],
-            "time": "2021-05-27T06:44:53+00:00"
+            "time": "2022-11-04T23:20:21+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -6867,16 +6876,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v9.8.0",
+            "version": "v9.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "5a55767326e77dac8a0f57022d27533beeafc197"
+                "reference": "479b5c2136fde0debb93d290ceaf20dd161c358f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/5a55767326e77dac8a0f57022d27533beeafc197",
-                "reference": "5a55767326e77dac8a0f57022d27533beeafc197",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/479b5c2136fde0debb93d290ceaf20dd161c358f",
+                "reference": "479b5c2136fde0debb93d290ceaf20dd161c358f",
                 "shasum": ""
             },
             "require": {
@@ -6922,9 +6931,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v9.8.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v9.9.0"
             },
-            "time": "2022-10-20T23:29:24+00:00"
+            "time": "2022-11-08T20:25:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -12896,5 +12905,5 @@
         "ext-zip": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
