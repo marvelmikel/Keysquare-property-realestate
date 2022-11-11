@@ -201,8 +201,8 @@
 
                         <div class="collapse navbar-collapse justify-content-end animation" id="navbarSupportedContent">
                             <div class="main-menu-darken"></div>
-                            <div class="main-menu-content">
-                                <div class="d-lg-none bg-primary p-2" >
+                            <div class="main-menu-content" style=" background:#06112A;">
+                                <div class="d-lg-none bg-primary p-2"  >
                                     <span class="text-white">{{ __('Menu') }}</span>
                                     <span class="float-right toggle-main-menu-offcanvas text-white">
                                         <i class="far fa-times-circle"></i>
@@ -216,12 +216,12 @@
                                             'view'    => 'main-menu',
                                         ])
                                     !!}
-                                    <div class="dropdown" style="padding-top: 15px; padding-left:-5px">
-                                        <button style="width: 130px" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Gallery
+                                    <div class="dropdown" style="padding-top: 15px; padding-left:-5px; background:#06112A;border:#06112A;">
+                                        <button style="width: 130px;  color: #fff!important; background:#06112A; border:#06112A; text-transform: lowercase; " class="btn btn-success dropdown-toggle"  data-toggle="dropdown">Gallery
                                         <span class="caret"></span></button>
-                                        <ul style="padding-top: 20px; padding-left:5px; background:green"; color:white class="dropdown-menu">
-                                            <li style="font-color:white"><a href="/gallery">Images</a></li>
-                                            <li style="color:white"><a href="/video">Videos</a></li>
+                                        <ul style="padding-top: 20px; padding-left:5px; background:#06112A; color:white" class="dropdown-menu">
+                                            <li ><a href="/gallery" style="color:white">Images</a></li>
+                                            <li ><a href="/video" style="color:white">Videos</a></li>
 
                                         </ul>
                                         </div>
@@ -590,24 +590,5 @@
 
 
 
-    <section class="img vid-section" style="background-image:url({{ URL::asset('u/images/replace/1.jpg')}})">
-        <div class="overlay"></div>
-        <div class="container-xl">
-        <div class="row justify-content-center">
-        <div class="col-md-6 vid-height d-flex align-items-center justify-content-center text-center">
 
-        <div class="video-wrap" data-aos="fade-up">
-
-        <h3>Think Key Square Think Real Estate</h3>
-        {{-- <video width="200" height="200" controls>
-        <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-        <source src="{{ URL::asset('u/video/keysqaure.mp4')}}" type="video/mp4" class="video-icon glightbox d-flex align-items-center justify-content-center">
-        <span class="ion-ios-play"></span>
-
-    </video> --}}
-        </div>
-        </div>
-        </div>
-        </div>
-        </section>
 
