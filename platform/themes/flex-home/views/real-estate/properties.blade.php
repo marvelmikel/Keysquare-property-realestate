@@ -5,52 +5,167 @@
         Theme::asset()->container('footer')->usePath()->add('leaflet.markercluster-src-js', 'libraries/leaflet.markercluster-src.js');
     }
 @endphp
+<link rel="stylesheet" href="css/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 @include('partials.notify')
 <section class="main-homes pb-3">
-    <div class="bgheadproject hidden-xs" style="background: url('{{ theme_option('breadcrumb_background') ? RvMedia::url(theme_option('breadcrumb_background')) : Theme::asset()->url('images/banner-du-an.jpg') }}')">
-        <div class="description">
-            <div class="container-fluid w90">
-                <h1 class="text-center">{{ SeoHelper::getTitle() }}</h1>
-                <p class="text-center">{{ theme_option('properties_description') }}</p>
-                {!! Theme::partial('breadcrumb') !!}
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid w90 padtop30">
-        <div class="projecthome">
-            <form action="{{ url()->current() }}" method="get" id="ajax-filters-form">
-                @include(Theme::getThemeNamespace() . '::views.real-estate.includes.search-box', ['type' => 'property', 'categories' => $categories])
-                <div class="row rowm10">
-                    <div class="@if (theme_option('show_map_on_properties_page', 'yes') == 'yes' && Arr::get($_COOKIE, 'show_map_on_properties', 1)) col-lg-7 left-page-content @else col-lg-12 full-page-content @endif"
-                        @if (theme_option('show_map_on_properties_page', 'yes') == 'yes')
-                            data-class-full="col-lg-12 full-page-content"
-                            data-class-left="col-lg-7 left-page-content"
-                        @endif
-                         id="properties-list">
-                        @include(Theme::getThemeNamespace() . '::views.real-estate.includes.filters', ['isChangeView' => theme_option('show_map_on_properties_page', 'yes') == 'yes'])
-                        <div class="data-listing mt-2">
-                            {!! Theme::partial('real-estate.properties.items', compact('properties')) !!}
-                        </div>
-                    </div>
-                    @if (theme_option('show_map_on_properties_page', 'yes') == 'yes')
-                        <div class="col-md-5 @if (!Arr::get($_COOKIE, 'show_map_on_properties', 1)) d-none @endif" id="properties-map">
-                            <div class="rightmap h-100">
-                                <div
-                                    id="map"
-                                    data-type="{{ request()->input('type') }}"
-                                    data-url="{{ route('public.ajax.properties.map') }}{{ isset($city) && $city ? '?city_id=' . $city->id : '' }}"
-                                    data-center="{{ json_encode([43.615134, -76.393186]) }}"></div>
+<div class="full-row" style="padding: 30px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <span class="text-center mt-4 d-block mb-5 text-white">With the same directors and board members, Leisure Lifestyle Homes is a sister company to Leisure Court,
+                    and both are household names in the real estate industry. The two companies partner with Super Structures Limited to deliver excellent housing solutions,
+                    matching affordability with luxury. Welcome to the Lagos branch of the best real estate developer in the country.
+                    </span>
+                    <h2 class="text-secondary double-down-line text-center">Featured Projects</h2>
+                </div>
+                <div class="col-lg-6">
+                    <div class="featured-thumb hover-zoomer mb-4">
+                        <div class="overlay-black overflow-hidden position-relative">
+                            <img src="images/IMG-20221013-WA0020.jpg" alt="" />
+
+                            <div class="sale bg-secondary text-white">Selling</div>
+                            <div class="appartment">
+                                <h5 class="text-white hover-text-primary mb-1"><a href="#">TRINITY ABODE ESTATE</a></h5>
+                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
                             </div>
                         </div>
-                    @endif
+                    </div>
                 </div>
-            </form>
-        </div>
-    </div>
-</section>
+                <div class="col-lg-6">
+                    <div class="featured-thumb hover-zoomer mb-4">
+                        <div class="overlay-black overflow-hidden position-relative">
+                            <img src="images/IMG-20221013-WA0020.jpg" alt="" />
 
-@if (theme_option('show_map_on_properties_page', 'yes') == 'yes')
-    <script id="traffic-popup-map-template" type="text/x-custom-template">
-        {!! Theme::partial('real-estate.properties.map', ['property' => get_object_property_map()]) !!}
-    </script>
-@endif
+                            <div class="sale bg-secondary text-white">Selling</div>
+                            <div class="appartment">
+                                <h5 class="text-white hover-text-primary mb-1"><a href="#">TRINITY ABODE ESTATE</a></h5>
+                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="featured-thumb hover-zoomer mb-4">
+                        <div class="overlay-black overflow-hidden position-relative">
+                            <img src="images/IMG-20221013-WA0019.jpg" alt="" />
+
+                            <div class="featured bg-success text-white">New</div>
+
+                            <div class="sale bg-secondary text-white">Selling</div>
+                            <div class="appartment">
+                                <h5 class="text-white hover-text-primary mb-1"><a href="#">METROVIEW GARDEN ESTATE</a></h5>
+                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="featured-thumb hover-zoomer mb-4">
+                        <div class="overlay-black overflow-hidden position-relative">
+                            <img src="images/IMG-20221013-WA0019.jpg" alt="image" />
+        
+                            <div class="featured bg-success text-white">New</div>
+
+                            <div class="sale bg-secondary text-white">Selling</div>
+                            <div class="appartment">
+                                <h5 class="text-white hover-text-primary mb-1"><a href="#">METROVIEW GARDEN ESTATE</a></h5>
+                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-row py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="contact-info">
+                            <div class="d-lg-flex">
+                                <div class="circle"><img src="images/icon.png" alt="" /></div>
+                                <div class="contact-details">
+                                    <ul>
+                                        <li class="d-flex mb-4">
+                                            <i class="fas fa-phone-alt text-primary me-2 font-13 mt-2"></i>
+                                            <div class="contact-address">
+                                                <h4 class="text-white">Phone Number</h4>
+                                                <br />
+                                                <h5 class="text-white">Abuja</h5>
+                                                <span class="text-white">+2349048581703</span>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex mb-4">
+                                            <i class="fas fa-envelope text-primary me-2 font-13 mt-1"></i>
+                                            <div class="contact-address">
+                                                <h5 class="text-white">Email Address</h5>
+                                                <span><a href="" class="text-white">keysquareservices@gmail.com</a></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="contact-info">
+                            <ul>
+                                <li class="d-flex mb-4">
+                                    <i class="fas fa-map-marker-alt text-primary me-2 font-13 mt-1"></i>
+                                    <div class="contact-address">
+                                        <h4 class="text-white">Office Address</h4>
+                                        <br />
+                                        <h5 class="text-white">Abuja</h5>
+                                        <span class="text-white" >No 7 EKET CLOSE GARKI AREA 8, ABUJA, NIGERIA.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="contact-info">
+                            <h3 class="mb-5 text-white">Social</h3>
+                            <div class="text-secondary hover-text-primary">
+                                <a class="me-4 text-white fw-bold" href="#" target="_"><i class="fab fa-facebook-f"></i></a>
+                                <a class="me-4 text-white fw-bold" href="#" target="_"><i class="fab fa-twitter"></i></a>
+                                <a class="me-4 text-white fw-bold" href="#" target="_"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<div class="mapouter">
+            <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=No 7 EKET CLOSE GARKI AREA 8, ABUJA, NIGERIA.&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                <a href="https://formatjson.org/">format json</a>
+            </div>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    width: 100%;
+                    height: 400px;
+                }
+                
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none!important;
+                    width: 100%;
+                    height: 400px;
+                }
+                
+                .gmap_iframe {
+                    height: 400px!important;
+                }
+            </style>
+              <script src="css/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+        </div>
+
+
