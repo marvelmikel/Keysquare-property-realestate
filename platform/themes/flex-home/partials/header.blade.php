@@ -183,7 +183,7 @@
             <div class="row">
                 <div class="col-12">
 
-                    <nav class="navbar navbar-expand-lg navbar-light">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
                         <h4 style="color:#fff; font-size: 15px; padding-left:10px">RC 1721549 <br> KEYSQUARE<br> HOMES & PROPERTIES LTD<BR> Keys to your Home </h4>
 
                         @if (theme_option('logo'))
@@ -201,8 +201,8 @@
 
                         <div class="collapse navbar-collapse justify-content-end animation" id="navbarSupportedContent">
                             <div class="main-menu-darken"></div>
-                            <div class="main-menu-content">
-                                <div class="d-lg-none bg-primary p-2">
+                            <div class="main-menu-content" style=" background:#06112A;">
+                                <div class="d-lg-none bg-primary p-2"  >
                                     <span class="text-white">{{ __('Menu') }}</span>
                                     <span class="float-right toggle-main-menu-offcanvas text-white">
                                         <i class="far fa-times-circle"></i>
@@ -216,12 +216,12 @@
                                             'view'    => 'main-menu',
                                         ])
                                     !!}
-                                    <div class="dropdown" style="padding-top: 15px; padding-left:-5px">
-                                        <button style="width: 130px" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Gallery
+                                    <div class="dropdown" style="padding-top: 15px; padding-left:-5px; background:#06112A;border:#06112A;">
+                                        <button style="width: 130px;  color: #fff!important; background:#06112A; border:#06112A; text-transform: lowercase; " class="btn btn-success dropdown-toggle"  data-toggle="dropdown">Gallery
                                         <span class="caret"></span></button>
-                                        <ul style="padding-top: 20px; padding-left:5px; background:green"; color:white class="dropdown-menu">
-                                            <li style="font-color:white"><a href="/gallery">Images</a></li>
-                                            <li style="color:white"><a href="/video">Videos</a></li>
+                                        <ul style="padding-top: 20px; padding-left:5px; background:#06112A; color:white" class="dropdown-menu">
+                                            <li ><a href="/gallery" style="color:white">Images</a></li>
+                                            <li ><a href="/video" style="color:white">Videos</a></li>
 
                                         </ul>
                                         </div>
@@ -312,7 +312,7 @@
     <div class="hero-slider">
     <div class="item">
     <div class="work">
-    <div class="img d-flex align-items-center js-fullheight" style="background-image:url({{ URL::asset('u/images/replace/IMG-20221013-WA0019.jpg')}})">
+    <div class="img d-flex align-items-center js-fullheight" style="background-image:url({{ URL::asset('u/images/replace/1.jpg')}})">
     <div class="container-xl">
     <div class="row justify-content-center">
     <div class="col-md-10 col-xl-6">
@@ -329,12 +329,12 @@
     </div>
     <div class="item">
     <div class="work">
-    <div class="img d-flex align-items-center justify-content-center js-fullheight" style="background-image:url({{ URL::asset('u/images/replace/IMG-20221013-WA0020.jpg')}})">
+    <div class="img d-flex align-items-center justify-content-center js-fullheight" style="background-image:url({{ URL::asset('u/images/replace/2.jpeg')}})">
     <div class="container-xl">
     <div class="row justify-content-center">
     <div class="col-md-10 col-xl-6">
     <div class="text text-center" data-aos="fade-up" data-aos-duration="1000">
-    <h2>Five Bedroom Detached Duplex</h2>
+    <h2>Think Keysquare, Think Real Estate.</h2>
     <!-- <p class="mb-5">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> -->
     <p><a href="/about-us" class="btn btn-primary px-5 py-3">Learn More <span class="ion ion-ios-arrow-round-forward"></span></a></p>
     </div>
@@ -590,24 +590,5 @@
 
 
 
-    <section class="img vid-section" style="background-image:url({{ URL::asset('u/images/replace/men.jpg')}})">
-        <div class="overlay"></div>
-        <div class="container-xl">
-        <div class="row justify-content-center">
-        <div class="col-md-6 vid-height d-flex align-items-center justify-content-center text-center">
 
-        <div class="video-wrap" data-aos="fade-up">
-
-        <h3>Modern House Video</h3>
-        {{-- <video width="200" height="200" controls>
-        <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-        <source src="{{ URL::asset('u/video/keysqaure.mp4')}}" type="video/mp4" class="video-icon glightbox d-flex align-items-center justify-content-center">
-        <span class="ion-ios-play"></span>
-
-    </video> --}}
-        </div>
-        </div>
-        </div>
-        </div>
-        </section>
 
