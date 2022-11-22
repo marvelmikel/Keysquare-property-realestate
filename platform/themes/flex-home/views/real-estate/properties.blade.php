@@ -1,10 +1,4 @@
-@php
-    if (theme_option('show_map_on_properties_page', 'yes') == 'yes') {
-        Theme::asset()->usePath()->add('leaflet-css', 'libraries/leaflet.css');
-        Theme::asset()->container('footer')->usePath()->add('leaflet-js', 'libraries/leaflet.js');
-        Theme::asset()->container('footer')->usePath()->add('leaflet.markercluster-src-js', 'libraries/leaflet.markercluster-src.js');
-    }
-@endphp
+
 <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/css/all.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 @include('partials.notify')
 <section class="main-homes pb-3">
+<h2 class="text-white single-down-line text-center">Keysquare Properties</h2>
 <div class="full-row" style="padding: 30px 0;">
         <div class="container">
             <div class="row">
@@ -24,65 +19,26 @@
                     </span>
                     <h2 class="text-secondary double-down-line text-center">Featured Projects</h2>
                 </div>
+                @foreach($properties as $property)
                 <div class="col-lg-6">
                     <div class="featured-thumb hover-zoomer mb-4">
                         <div class="overlay-black overflow-hidden position-relative">
-                            <img src="images/IMG-20221013-WA0020.jpg" alt="" />
-
-                            <div class="sale bg-secondary text-white">Selling</div>
-                            <div class="appartment">
-                                <h5 class="text-white hover-text-primary mb-1"><a href="#">TRINITY ABODE ESTATE</a></h5>
-                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="featured-thumb hover-zoomer mb-4">
-                        <div class="overlay-black overflow-hidden position-relative">
-                            <img src="images/IMG-20221013-WA0020.jpg" alt="" />
-
-                            <div class="sale bg-secondary text-white">Selling</div>
-                            <div class="appartment">
-                                <h5 class="text-white hover-text-primary mb-1"><a href="#">TRINITY ABODE ESTATE</a></h5>
-                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="featured-thumb hover-zoomer mb-4">
-                        <div class="overlay-black overflow-hidden position-relative">
-                            <img src="images/IMG-20221013-WA0019.jpg" alt="" />
-
+                        {!! BaseHelper::clean($property->content)!!} 
+                            @if($property->status == "selling")
                             <div class="featured bg-success text-white">New</div>
-
+                            @else
+                            <div class="featured bg-danger text-white">Sold</div>
+                            @endif
                             <div class="sale bg-secondary text-white">Selling</div>
                             <div class="appartment">
-                                <h5 class="text-white hover-text-primary mb-1"><a href="#">METROVIEW GARDEN ESTATE</a></h5>
-                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
+                                <h5 class="text-white hover-text-primary mb-1"><a href="#">{{$property->name}}</a></h5>
+                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>{{$property->location}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="featured-thumb hover-zoomer mb-4">
-                        <div class="overlay-black overflow-hidden position-relative">
-                            <img src="images/IMG-20221013-WA0019.jpg" alt="image" />
-        
-                            <div class="featured bg-success text-white">New</div>
-
-                            <div class="sale bg-secondary text-white">Selling</div>
-                            <div class="appartment">
-                                <h5 class="text-white hover-text-primary mb-1"><a href="#">METROVIEW GARDEN ESTATE</a></h5>
-                                <span class="location text-white font-14"><i class="fas fa-map-marker-alt text-danger"></i>Idu Federal capital Teritory Abuja</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+                @endforeach
+                
         <div class="full-row py-5">
             <div class="container">
                 <div class="row">
@@ -141,8 +97,7 @@
                 </div>
             </div>
         </div>
-</section>
-<div class="mapouter">
+        <div class="mapouter">
             <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=No 7 EKET CLOSE GARKI AREA 8, ABUJA, NIGERIA.&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                 <a href="https://formatjson.org/">format json</a>
             </div>
@@ -167,5 +122,7 @@
             </style>
               <script src="css/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
         </div>
+</section>
+
 
 

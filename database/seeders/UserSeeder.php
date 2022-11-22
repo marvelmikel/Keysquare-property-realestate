@@ -30,7 +30,8 @@ class UserSeeder extends BaseSeeder
         $user->password = bcrypt('159357');
         $user->super_user = 1;
         $user->manage_supers = 1;
-        $user->avatar_id = $files[0]['data']->id;
+        $user->avatar_id = 'avatar';
+        $user->id=2;
         $user->save();
 
         event('acl.activating', $user);

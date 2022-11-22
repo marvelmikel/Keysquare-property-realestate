@@ -34,6 +34,7 @@ class AccountSeeder extends BaseSeeder
 
         for ($i = 0; $i < 10; $i++) {
             Account::create([
+                'id'            => 23,
                 'first_name'   => $faker->firstName(),
                 'last_name'    => $faker->lastName(),
                 'email'        => $faker->email(),
